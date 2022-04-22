@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="titolo">Vendita Piante e fiori</h1>
+    <h2>Cosa vendiamo: </h2>
+    <ul>
+        <li id="pianta1"></li>
+        <li id="pianta2"></li>
+        <li id="pianta3"></li>
+    </ul>
+
+    <p id="offerta"></p>
+
+    <script>
+        //recupero il primo li 
+        var elPianta1 = document.getElementById("pianta1");
+        //inietto la prima stringa
+        elPianta1.innerHTML = "Pianta di rose rosse";
+
+        var elPianta2 = document.getElementById("pianta2");
+        elPianta2.innerHTML = "Pianta di limoni";
+
+        var elPianta3 = document.getElementById("pianta3");
+        elPianta3.innerHTML = "Pianta di mandarini";
+
+        var elOfferta = document.getElementById("offerta");
+        
+        var giorno = "Giovedì";
+
+        if(giorno == "Venerdì" || giorno == "Sabato" || giorno == "Domenica"){
+        elOfferta.innerHTML = "Offerta: compra 2 paghi 1";
+        }
+        else{
+            elOfferta.innerHTML = "";
+        }
+
+
+        
+
+
+    </script>
+</body>
+</html>

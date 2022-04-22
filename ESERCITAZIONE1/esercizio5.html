@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="numero1"></p>
+    <p id="numero2"></p>
+    <p id="numero3"></p>
+
+    <div id='addizione' style="width: 500px; height: 200px;
+    background-color: red; margin-bottom: 30px " 
+    onmouseenter="somma()"></div>
+    <br>
+
+    <div id="moltiplicazione" style="width: 500px; height: 200px;
+    background-color: yellow" 
+    onmouseenter="moltiplica()"></div>
+
+
+    <script>
+        //PEZZI HTML 
+        var numero1 = document.getElementById('numero1');
+        var numero2 = document.getElementById('numero2');
+        var numero3 = document.getElementById('numero3');
+        //DIV
+        var addizione = document.getElementById('addizione');
+        var moltiplicazione = document.getElementById('moltiplicazione');
+
+        //CREO LE 3 VARIABILI NUMERICHE
+        var n1 = 10;
+        var n2 = 4;
+        var n3 = 17;
+
+        numero1.innerHTML = "Primo numero: " + n1;
+        numero2.innerHTML = "Secondo numero: " + n2;
+        numero3.innerHTML = "Terzo numero: " + n3;
+
+        function somma() {
+            //faccio la somma dei tre numeri 
+            var sommaNum = n1 + n2 + n3;
+            //stampo dentro il div il risultato;
+            addizione.innerHTML += 'La somma è : ' + sommaNum + '<br>';
+        }
+
+        function moltiplica() {
+            //faccio la moltiplicazione
+            var prodNum = n1 * n2 * n3;
+            moltiplicazione.innerHTML += 'Il prodotto dei numeri è: '
+                + prodNum + '<br>';
+        }
+
+
+
+    </script>
+</body>
+
+</html>

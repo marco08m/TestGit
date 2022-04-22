@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form>
+        <label>Nome: </label>
+        <input type="text" id="nome" name="nome" value=""> <br>
+
+        <label>Cognome: </label>
+        <input type="text" id="cognome" name="cognome"> <br>
+
+        <label>Email: </label>
+        <input type="email" id="email" name="email"><br>
+
+        <input type="button" value="Clicca" onclick="verifica()">
+    </form>
+
+    <div id="demo"></div>
+
+    <script>
+        //Adesso recupero ciò che scrive l'utente nei campi input
+        //Poi stampo dentro demo queste informazioni
+        //Per prendere i value degli input posso farlo dentro la funzione verifica()
+
+        var demo = document.getElementById('demo');
+
+        function verifica(event) {
+            //recupero tutti i value dei campi input
+            //il value è ciò che scrive l'utente
+
+
+            var nome = document.getElementById('nome').value;
+            var cognome = document.getElementById('cognome').value;
+            var email = document.getElementById('email').value;
+
+            if (nome == '' || cognome == '' || email == '') {
+                demo.innerHTML = 'Amico utente, hai dimenticato almeno un campo';
+                demo.style.color = 'orange';
+
+            } else {
+                demo.innerHTML = "Nome : " + nome + " " + cognome
+                    + "<br>email: " + email;
+
+                demo.style.color = 'black';
+            }
+        }
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

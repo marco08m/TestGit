@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="creaH1()">Crea Titolo</button>
+    <button onclick="creaPar()">Crea Paragrafo</button>
+    <button onclick="creaPuls()">Crea Pulsante</button>
+
+    <div id="demo">
+
+    </div>
+
+    <script>
+        var demo = document.getElementById('demo');
+
+        function creaH1() {
+            var titolo = "<h1> Benvenuto sul mio Sito </h1>";
+            demo.innerHTML += titolo;
+        }
+
+        function creaPar() {
+            var paragrafo = "<p>Questo sito parla di calcio </p>";
+            demo.innerHTML += paragrafo;
+        }
+
+        function creaPuls() {
+            var pulsante = "<button onclick='cancella()'>Elimina</button><br>";
+            demo.innerHTML += pulsante;
+        }
+
+        function cancella() {
+            demo.innerHTML = ''; //iniettando il vuoto cancello il contenuto
+        }
+
+    </script>
+</body>
+
+</html>

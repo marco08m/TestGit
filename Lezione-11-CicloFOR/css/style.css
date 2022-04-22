@@ -1,0 +1,19 @@
+.rosso {
+    color: red;
+}
+
+.arancione {
+    color: orange;
+}
+
+.viola {
+    color: purple;
+}
+
+#feed {
+    min-height: 20px;
+}
+
+.barrato {
+    text-decoration: line-through;
+}

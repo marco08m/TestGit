@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="demo"></div>
+
+    <script>
+        //Creo array di frutti
+        var frutta = ['mela', 'pesca', 'kiwi', 'banana', 'arancia','ciliegia'];
+       
+
+        //prendo il div id demo dell'HTML
+        var elDemo = document.getElementById('demo');
+
+        // //PRIMO METODO
+        // for(var indice in frutta){
+        //     elDemo.innerHTML += '<li>' + frutta[indice] + '</li>';
+        // }
+
+        //SECONDO METODO
+        //Creo la variabile di supporto, cioè una var che carico
+        //dall'interno del ciclo for
+        var lista = '';
+
+        for (var indice in frutta) {
+            //Carico la lista dentro il FOR 
+            lista += '<li>' +
+                frutta[indice] +
+                '<img style="width:100px; heigth:auto" src=img/' + frutta[indice] + '.jpg>' +
+                '</li>';
+        }
+
+        //STAMPO LA LISTA 
+                 elDemo.innerHTML = lista;
+    </script>
+</body>
+
+</html>

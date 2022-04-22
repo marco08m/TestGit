@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <h1>Lista della spesa</h1>
+    <ul id="lista">
+        <li>Pane</li>
+        <li>Pasta</li>
+        <li>Fagioli</li>
+        <li>Insalata</li>
+        <li>Pesce</li>
+        <li>Carne</li>
+    </ul>
+
+    <p>Cliccando sul pulsante il testo diventa barrato</p>
+
+    <button onclick="barraTesto()">Barra Testo</button>
+
+    <script>
+        //per adesso prendiamo tutta la lista
+        var lista = document.getElementById('lista');
+        console.log(lista);
+
+        //Se voglio cambiare il singolo li devo prenderli
+        //utilizzando un altro sistema
+        var elementiLI = document.getElementsByTagName('li');
+        //prendendo tutti gli elementi contemporaneamente si crea
+        //una Nodelist: un elemento molto simile agli array
+        console.log(elementiLI);
+        //adesso posso gestire la mia lista come se fosse un array 
+        //Per cui se voglio cambiare il singolo li mi basta richiamare
+        //l'indice. Cambio i Fagioli con le Lenticchie
+        elementiLI[2].innerHTML = 'Lenticchie';
+
+        for (var i = 0; i < elementiLI.length; i++) {
+            console.log(elementiLI[i].innerHTML);
+            elementiLI[i].setAttribute('class', 'rosso');
+        }
+
+        function barraTesto() {
+            //prendo i singoli li
+            for (var i = 0; i < elementiLI.length; i++) {
+                // elementiLI[i].setAttribute('class', 'barrato'); 
+
+                //Questo sistema qui sotto permette di aggiungere una 
+                //classe a quella esistente
+                elementiLI[i].classList.add('barrato');
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

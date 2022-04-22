@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label>Nome: </label><input type="text" id="nome" value="Tommaso"> <br>
+
+    <button onclick="recupera()">Recupera</button>
+
+    <div id="demo"></div>
+
+    <div id="info">Testo iniziale</div>
+
+    <script>
+
+        var demo = document.getElementById('demo');
+
+        function recupera() {
+            //recupero il valore del campo input
+            //recupero quello che scrive l'utente aggiungendo value alla fine del GETBYID
+            //Il recupero dei valori dei campi input va fatto dentro
+            //le funzioni
+            var nome = document.getElementById('nome').value; //leggo
+            demo.innerHTML = 'Ciao ' + nome;
+            document.getElementById('nome').value = '' //scrivo
+
+            //cose c'è dentro info ?
+            var info = document.getElementById('info');
+            console.log(info.innerHTML); //legge
+            info.innerHTML = 'Nuovo testo' //scrive
+            console.log(info.innerHTML);
+        }
+
+
+    </script>
+</body>
+
+</html>

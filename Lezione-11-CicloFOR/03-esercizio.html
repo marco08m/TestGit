@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Studenti FAL</h1>
+
+    <ul id="listaStudenti"></ul>
+
+    <h3 id="numeroStud"></h3>
+
+    <a href="paginaEx.html">Dario Mennillo</a>
+    <script>
+        //Creare un array con i nomi e cognomi dei compagni di classe
+        //Stampare in una lista nomi e cognomi.
+        //Creare un h3 al fondo della lista in cui ci sarà scritto
+        //il numero complessivo di studenti
+
+        var studenti = [
+            'Tommaso de Chirico',
+            'Davide Andolfatto',
+            'Ciro Abagnale',
+            'Diego Buscemi',
+            // 'Alessandro Rovej',
+            'Daniel Petrov',
+            'Anida Dauti',
+            'Luca Augelli',
+            'Andrea Gallo',
+            'Marco Moraglio',
+            'Claudia Herrera'
+        ];
+
+        var listaStudenti = document.getElementById('listaStudenti');
+        var numeroStud = document.getElementById('numeroStud')
+
+
+        for (var i = 0; i < studenti.length; i++) {
+            listaStudenti.innerHTML += '<li>#' + (i + 1) + ": " + studenti[i] + '</li>';
+        }
+        numeroStud.innerHTML = 'Studenti presenti: ' + studenti.length;
+
+
+        // if (i % 3 == 0) {
+        //     // fai qualcosa
+        // } else if (i % 5 == 0) {
+        //     //fai altro
+        // } else if (i % 3 == 0 && i % 5 == 0) {
+        //     //scrivi solo il numero 
+        // }
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styleCinema.css">
+</head>
+
+<body>
+
+    <h1>Cinema Engim</h1>
+
+
+    <div class="mt-20" id="sezioneCarosello">
+        <!-- Inserire il carosello delle locandine -->
+    </div>
+
+
+    <div class="mt-20" id="sezioneLogin">
+        <!-- Inserire il form di Login con Controlli  -->
+        <form method="get" action="#">
+            <input type="text" id="username" placeholder="Username"><br>
+            <input type="password" id="password" placeholder="Password"><br>
+            <button onclick="controllaLogin()">Login</button>
+        </form>
+        <div id="feedback"></div>
+    </div>
+
+    <div class="mt-20" id="sezioneAcquisto">
+        <!-- Questa sezione comparirà solo se la login va a buon fine -->
+        <!-- Inserire Locandina singola per l'aquisto -->
+        <p>Scegli quale film acquistare dal seguente elenco</p>
+
+        <select id="sceltaFilm">
+            <option disabled selected>Scegli Film</option>
+            <option>Die Hard</option>
+            <option>Fast & Furious</option>
+            <option>Midnight in Paris</option>
+            <option>Papillon</option>
+            <option>Scarface</option>
+            <option>Pirati dei Caraibi</option>
+        </select>
+
+        <div id="filmScelto">
+            <div id="titoloFilm"></div>
+            <img id="locandinaFilm" class="dimLocandina" src="">
+            <div id="prezzoFilm"></div>
+            <button id="btnAcq" onclick="acquista()">Acquista</button>
+        </div>
+    </div>
+    </div><!-- chiude div container -->
+
+    <script>
+
+        var usernameLog = 'Dario';
+        var passwordLog = 1234;
+
+        var locandine = [
+            'img/dieHard.jpg',
+            'img/fastFurious.jpg',
+            'img/midnight.jpg',
+            'img/papillon.jpg',
+            'img/scarface.jpg',
+            'img/caraibi.jpg',
+        ];
+
+        var titoli = [
+            'Die Hard',
+            'Fast And Furious',
+            'Midnight in Paris',
+            'Papillon',
+            'Scarface',
+            'Pirati dei Caraibi'
+        ];
+
+        var prezzi = 5.99;
+
+        const sezioneCarosello = document.getElementById('sezioneCarosello');
+        const sezioneLogin = document.getElementById('sezioneLogin');
+        const sezioneAcquisto = document.getElementById('sezioneAcquisto');
+        const feedback = document.getElementById('feedback')
+
+        for (var i = 0; i < locandine.length; i++) {
+            var img = document.createElement('img');
+            img.setAttribute('src', locandine[i]);
+            img.setAttribute('class', 'dimImg')
+            sezioneCarosello.appendChild(img);
+        }
+
+        function controllaLogin(event) {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            sezioneAcquisto.setAttribute('style', 'display:none')
+
+            if (username == usernameLog && password == passwordLog) {
+                feedback.innerHTML = 'Benvenuto ' + usernameLog;
+                sezioneAcquisto.setAttribute('style', 'display: block');
+
+            } else {
+                feedback.innerHTML = "Credenziali errate";
+                event.preventDefault();
+            }
+        }
+
+        var opts = document.getElementById('sceltaFilm'); //select
+        var filmScelto = document.getElementById('filmScelto'); //div
+        var titoloFilm = document.getElementById('titoloFilm');
+        var locandinaFilm = document.getElementById('locandinaFilm');
+        var prezzoFilm = document.getElementById('prezzoFilm');
+
+        opts.onchange = function () {
+
+            var indice = this.options.selectedIndex - 1;
+
+            titoloFilm.innerHTML = '<h2>' + titoli[indice] + '</h2>';
+            locandinaFilm.src = locandine[indice];
+            prezzoFilm.innerHTML = '<p> Prezzo Acquisto: € ' + prezzi + '</p>';
+
+
+        }
+
+        function acquista() {
+
+            var indice = opts.options.selectedIndex - 1;
+            console.log(indice);
+            if (indice == -1) {
+                alert('Non hai selezionato nessun film')
+            } else {
+                alert("Hai acquistato: " + titoli[indice])
+            }
+        }
+    </script>
+
+</body>
+
+</html>

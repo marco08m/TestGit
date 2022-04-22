@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h1>La nostra Classe</h1>
+    <h3>Fal-Programmatore 2022</h3>
+    <ul id="listaStudenti"></ul>
+
+
+    <script>
+        var listaStudenti = document.getElementById('listaStudenti');
+
+        var studenti = [
+            {
+                nome: 'Daniel',
+                cognome: 'Petrov',
+                eta: 26,
+                matricola: 8
+            },
+            {
+                nome: 'Tommaso',
+                cognome: 'de Chirico',
+                eta: 32,
+                matricola: 3
+            },
+            {
+                nome: 'Marco',
+                cognome: 'Moraglio',
+                eta: 52,
+                matricola: 7
+            },
+            {
+                nome: 'Alessandro',
+                cognome: 'Rovej',
+                eta: 30,
+                matricola: 9
+            },
+            {
+                nome: 'Ciro',
+                cognome: 'Abagnale',
+                eta: 26,
+                matricola: 1
+            },
+            {
+                nome: 'Anida',
+                cognome: 'Dauti',
+                eta: 35,
+                matricola: 12
+            },
+            {
+                nome: 'Claudia',
+                cognome: 'Herrera',
+                eta: 55,
+                matricola: 6
+            },
+            {
+                nome: 'Luca',
+                cognome: 'Augelli',
+                eta: 26,
+                matricola: 13
+            },
+            {
+                nome: 'Andrea',
+                cognome: 'Gallo',
+                eta: 23,
+                matricola: 5
+            },
+            {
+                nome: 'Diego',
+                cognome: 'Buscemi',
+                eta: 20,
+                matricola: 14
+            },
+            {
+                nome: 'Davide',
+                cognome: 'Andolfatto',
+                eta: 21,
+                matricola: 2
+            }
+        ]
+
+        for (var i = 0; i < studenti.length; i++) {
+
+            listaStudenti.innerHTML += '<li>' + studenti[i].nome +
+                ' ' + studenti[i].cognome + ' - Matr: ' +
+                studenti[i].matricola + '</li>';
+
+        }
+
+      
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Inserisci due numeri e scopri il maggiore tra i due</h1>
+    Primo Numero: <input type="number" id="primo"><br>
+    Secondo Numero: <input type="number" id="secondo"><br>
+    <input type="button" onclick="calcola()" value="Calcola">
+    <div id="demo"></div>
+    <script>
+        //Suggerimento per recuperare il numero.
+        //Quando recupero un numero da un campo input è comunque una
+        //stringa.
+        //Per dirgli che quello appena recuperato è un numero,
+        // utilizzo Number() --> cast di una variabile
+
+        console.log(Number("ciao")); //è inutile forza una parola ad essere un numero
+        console.log(Number("33"));
+        console.log(typeof "33");
+
+        var demo = document.getElementById('demo');
+
+        function calcola() {
+            //Si recupera sempre dentro le funzioni, ciò che scrive l'utente
+
+
+            var primo = Number(document.getElementById('primo').value);
+            var secondo = Number(document.getElementById('secondo').value);
+
+            console.log(document.getElementById('secondo').value);
+            console.log(secondo);
+
+
+            if (document.getElementById('primo').value == '' || document.getElementById('secondo').value == '') {
+                demo.innerHTML = 'Non hai inserito dei numeri';
+
+            } else if (primo > secondo) {
+                demo.innerHTML = 'Il maggiore è: ' + primo;
+
+            } else if (secondo > primo) {
+                demo.innerHTML = 'Il maggiore è: ' + secondo;
+
+            } else {
+                demo.innerHTML = 'I due numeri sono uguali';
+            }
+
+        }
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

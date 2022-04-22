@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <h1>Ciao Utente</h1>
+
+    <ul id="lista">
+        <li>Andare al mare</li>
+        <li>Studiare</li>
+        <li>Leggere un libro</li>
+        <li>Andare al cinema</li>
+    </ul>
+
+    <!-- Script in linea -->
+    <script>
+        var lista = document.getElementById('lista'); //Ul
+
+        //Voglio aggiungere un nuovo li alla mia lista 
+        //Gerarchia Parent -> Child
+
+        //ul è il parent
+        //li sono i Children
+
+        //creo un nuovo li
+        var liSingolo = document.createElement('li'); //<li></li>
+        //scrivi dentro li 
+        liSingolo.innerHTML = 'Riparare Bicicletta';
+
+        //aggiungo l'elemento li figlio alla lista genitore
+        lista.appendChild(liSingolo);
+
+        var altroLi = document.createElement('li');
+        altroLi.innerHTML = 'Giro in motocicletta';
+        lista.appendChild(altroLi);
+
+        //Voglio inserire un nuovo li ma in cima alla lista
+        var li = document.createElement('li');
+        li.innerHTML = 'Comprare la frutta';
+        lista.prepend(li);
+
+        //Inserire in mezzo (tra il 2 e il 3);
+        var lis = document.getElementsByTagName('li');
+        var nuovoLI = document.createElement('li');
+        nuovoLI.innerHTML = 'Andare a pesca';
+        console.log(lis);
+        lista.insertBefore(nuovoLI, lis[3]);
+
+        //Mettere a tutti il colore blu quando clicco sul singolo li 
+        //prendo tutta la lista di li 
+        // var lis = document.getElementsByTagName('li');
+
+        //ad ogni singolo li della mia lista lis devo applicare 
+        //una funzione all'evento onclick
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onclick = function () {
+                // this.setAttribute('class', 'blu');
+                //this fa rifrimento all'oggetto contenitore più vicino
+                this.classList.toggle('blu');
+            }
+        }
+
+    </script>
+
+
+</body>
+
+</html>

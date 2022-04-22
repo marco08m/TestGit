@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="demo"></div>
+
+    <script>
+        var demo = document.getElementById('demo');
+
+        var nomi = ['Luisa', 'Pasquale', 'Dario', 'Ilaria', 'Sam'];
+        nomi.sort(); //per ordinare alfabeticamente
+        nomi.reverse() //per invertire un ordine
+
+        for (var i = 0; i < nomi.length; i++) {
+
+            if (nomi[i] == 'Dario') {
+                demo.innerHTML += '<li>' + nomi[i] + ': <strong>docente</strong></li>';
+            } else {
+                demo.innerHTML += '<li>' + nomi[i] + ': studente</li>';
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

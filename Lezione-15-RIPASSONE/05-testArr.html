@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="demo"></div>
+    <button onclick="indietro()">Indietro</button>
+    <button onclick="avanti()">avanti</button>
+
+    <script>
+        var demo = document.getElementById('demo');
+
+        var mieFoto = ['foto1', 'foto2', 'foto3'];
+
+        var contatore = 0;
+
+        demo.innerHTML = mieFoto[contatore];
+
+        function indietro() {
+
+            if (contatore == 0) {
+                contatore = mieFoto.length - 1
+            } else {
+                contatore--;
+            }
+            demo.innerHTML = mieFoto[contatore];
+
+        }
+
+        function avanti() {
+
+            if (contatore == mieFoto.length - 1) {
+                contatore = 0;
+            } else {
+                contatore++
+            }
+            demo.innerHTML = mieFoto[contatore]
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

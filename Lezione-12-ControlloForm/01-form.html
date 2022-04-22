@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Compila il form</h1>
+
+    <form action="http://www.example.org" method="get" id="mioForm">
+
+        Nome: <input type="text" name="nome" id="nome">
+        <br>
+        Cognome: <input type="text" name="cognome" id="cognome">
+        <br>
+        Email: <input type="email" name="mail" id="mail">
+        <br>
+        Pass: <input type="password" name="password" id="password">
+        <br>
+        <input type="submit" value="Registrati" id="btnSub">
+
+    </form>
+
+
+    <div id="demo"></div>
+
+    <script>
+
+        var demo = document.getElementById('demo');
+
+        var mioForm = document.getElementById('mioForm');
+
+        function validate(event) {
+            demo.innerHTML = '';
+            //Questa funzione si occupa di controllare i campi
+            //controlla se esistono e se sono validi 
+
+            var nome = document.getElementById('nome').value;
+            var cognome = document.getElementById('cognome').value;
+            var email = document.getElementById('mail').value;
+
+            if (nome == '') {
+                demo.innerHTML += "Non hai scritto il nome <br>";
+                demo.setAttribute('class', 'rosso')
+                event.preventDefault(); //Blocca la possibilità di passare 
+                //alla pagina successiva
+            }
+
+            if (cognome == '') {
+                demo.innerHTML += "Non hai scritto il cognome <br>";
+                event.preventDefault();
+            }
+
+        }
+
+        mioForm.onsubmit = validate;
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+#sezioneCarosello {
+    width: 100%;
+    height: auto;
+    border: 2px solid black;
+}
+
+#sezioneLogin {
+    width: 100%;
+    height: 200px;
+    border: 2px solid black;
+}
+
+#sezioneAcquisto {
+    display: none;
+    width: 100%;
+    min-height: 200px;
+    border: 2px solid black;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.dimImg {
+    margin: 0 10px 0 10px;
+    width: 150px;
+    height: auto;
+}
+
+.dimLocandina {
+    margin: 15px;
+    width: 300px;
+    height: auto;
+}

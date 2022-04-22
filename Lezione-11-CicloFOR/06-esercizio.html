@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <ul id="lista"></ul>
+    <button id="btn">Colora</button>
+    <button id="btn2">Toglie Colore</button>
+
+    <button id="btn3">Interruttore</button>
+    <button id="btn4">3 colori</button>
+
+    <script>
+        //dato il seguente array, stampalo in un div con un elenco puntato.
+        //Al fondo dell'elenco inserisci due pulsanti: il primo 
+        //mette il colore, il secondo lo toglie. Al click successivo 
+        //ritorna di colore nero.
+
+        var cose = ['Studiare', 'Giocare', 'Leggere', 'Imparare', 'Guardare un film'];
+
+        var lista = document.getElementById('lista');
+        var btn = document.getElementById('btn');
+        var btn2 = document.getElementById('btn2');
+        var btn4 = document.getElementById('btn4');
+
+        for (var i = 0; i < cose.length; i++) {
+            lista.innerHTML += '<li>' + cose[i] + '</li>';
+        }
+
+        function cambiaColore() {
+            lista.setAttribute('class', 'arancione');
+        }
+
+        function togliColore() {
+            lista.removeAttribute('class');
+        }
+
+        btn.onclick = cambiaColore;
+        btn2.onclick = togliColore;
+
+
+        var btn3 = document.getElementById('btn3');
+        btn3.onclick = function () {
+
+            if (lista.hasAttribute('class')) {
+                lista.removeAttribute('class') //spegni
+            } else {
+                lista.setAttribute('class', 'rosso');//accendi
+            }
+        }
+
+        var contatore = 0;
+        var colori = ['viola', 'rosso', 'arancione'];
+
+        btn4.onclick = function () {
+            lista.setAttribute('class', colori[contatore]);
+            if (contatore == colori.length - 1) {
+                contatore = 0;
+            } else {
+                contatore++;
+            }
+        }
+    </script>
+</body>
+
+</html>

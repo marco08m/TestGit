@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Lista Studenti</h1>
+    <ul id="lista">
+    </ul>
+
+
+    <script>
+        // Ciclo For Classico
+        for (var i = 0; i < 10; i++) {
+            // console.log(i);
+            console.log('giro ' + i);
+        }
+
+        //For per leggere un array 
+        var nomi = ['Marco', 'Luisa', 'Pasquale', 'Ilaria', 'Anthony', 'Luigi'];
+
+        //voglio scorrere le posizione dell'array
+
+        for (var i = 0; i < nomi.length; i++) {
+            console.log(nomi[i]);
+        }
+
+        for (const key in nomi) {
+            console.log(nomi[key]);
+        }
+
+        //Stampo la lista dei nomi dentro l'HTML
+        var lista = document.getElementById('lista');
+
+        for (var i = 0; i < nomi.length; i++) {
+            lista.innerHTML += '<li>' + nomi[i] + '</li>';
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>

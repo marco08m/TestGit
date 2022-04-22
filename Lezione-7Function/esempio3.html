@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Clicca per mostrare la lista</h2>
+    <button onclick="mostra()">Mostra</button>
+    <button onclick="colora()">Colora</button>
+    <div id="demo">
+
+    </div>
+
+    <script>
+        var frutta = ['mele', 'banane', 'kiwi', 'pere'];
+        var demo = document.getElementById('demo');
+
+        var lista = ''; //var di supporto che verrà riempita con il ciclo for
+        //leggo l'array con il ciclo For e costruisco la lista
+        for (var indice in frutta) {
+            lista += '<li>' + frutta[indice] + '</li>';
+        }
+
+        function mostra() {
+            demo.innerHTML = lista;
+        }
+
+        
+
+    </script>
+</body>
+
+</html>

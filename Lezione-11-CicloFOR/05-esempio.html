@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h2>Inserisci la frutta nel tuo carrello</h2>
+
+    <input type="text" placeholder="Inserisci frutta" id="campoInsert">
+
+    <button id="btn">Inserisci</button>
+
+    <div id="feed"></div>
+
+    <div id="carrello"></div>
+
+    <script>
+        var btn = document.getElementById('btn');
+        var carrello = document.getElementById('carrello');
+        var feed = document.getElementById('feed');
+        var frutta = [];
+
+        function aggiungi() {
+            carrello.innerHTML = '';
+            feed.innerHTML = '';
+            //aggiunge gli elementi nell'array e li stampa
+            //1.prendere quello che scrive l'utente
+            var fruttoInserito = document.getElementById('campoInsert').value.trim(); //trim taglia gli spazi vuoti a inizio e fine
+
+            if (fruttoInserito == '') {
+                // alert('scrivi qualcosa');
+                feed.innerHTML = 'Scrivi qualcosa';
+                feed.setAttribute('class', 'rosso');
+
+            } else if (frutta.indexOf(fruttoInserito) != -1) {
+                // alert('Hai già inserito questo frutto !!');
+                feed.innerHTML = 'Hai già inserito questo frutto';
+                feed.setAttribute('class', 'arancione');
+            } else {
+                //2.aggiungo all'array 
+                frutta.push(fruttoInserito);
+            }
+
+            //3.Stampo dentro demo
+            for (var i = 0; i < frutta.length; i++) {
+                carrello.innerHTML += '<li>' + frutta[i] + '</li>';
+            }
+
+            //pulisco il campo di input 
+            document.getElementById('campoInsert').value = '';
+        }
+
+
+     
+        btn.onclick = aggiungi
+    </script>
+</body>
+
+</html>

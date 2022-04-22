@@ -1,0 +1,71 @@
+@import url(normalize.css);
+
+.rosso {
+    color: red;
+}
+
+.barrato {
+    text-decoration: line-through;
+}
+
+.blu {
+    color: blue;
+}
+
+.dimensione {
+    width: 170px;
+    height: auto;
+}
+
+.dimCinema {
+    width: 100%;
+    height: auto;
+}
+
+.container{
+    width: 900px;
+    margin: 0 auto;
+    border: 1px solid red;
+}
+
+.sez_locandine img{
+    padding: 10px;
+   /* border: 1px solid #999;*/
+    box-shadow: 0px 0px 3px 2px #e3e3e3;;
+   /* margin: 10px;*/
+}
+
+.sez_locandine{ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 20px;
+}
+
+.flex{display: flex;justify-content: space-between;}
+
+.sez_locandine img{
+    flex-basis: 30%;
+}
+
+button {
+    background-color: #1ed2cb;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    text-shadow: 0px 0px 2px #a7a7a7;
+    font-family: sans-serif;
+    margin: 20px;
+    cursor: pointer;
+}
+
+
+
+.sez_button{
+    text-align: center;
+}
+
+.center{
+    justify-content: center;
+column-gap: 50px;}

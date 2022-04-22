@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="demo"></div>
+    <!-- <input type="time" name="tempo" id="tempo"> -->
+
+    <script>
+
+        var condizione = (3 == 3);
+        console.log(condizione);
+
+        var condizione2 = ("Dario" == "dario");
+        console.log(condizione2);
+
+        //Le condizioni vanno valutate, lo si fa con lo statement
+        //IF
+
+        if (3 == 3) {
+            //Ciò che si trova tra le parentesi {} viene 
+            //eseguito solo se la condizione risulta vera
+            console.log("I due numeri sono uguali");
+        }
+
+
+        var meteo = "sole";
+
+        if (meteo == 'sole') {
+            console.log("Porta gli occhiali da sole");
+        }
+
+        if (meteo == 'pioggia') {
+            console.log("Porta l'ombrello");
+        }
+
+        if (meteo == 'grandine') {
+            console.log("Resta a casa");
+        }
+
+        var orario = new Date().getHours();
+        console.log("Sono le ore " + orario);
+
+        if (orario > 8 && orario < 13) {
+            console.log("Buongiorno");
+        }
+
+        if (orario >= 13 && orario < 17) {
+            console.log("Buon pomeriggio ");
+        }
+
+        if (orario >= 17 && orario < 22) {
+            console.log("Buonasera");
+        }
+
+        if (orario >= 22 && orario < 24) {
+            console.log("Buonanotte");
+        }
+
+
+        //PEZZO NON NECESSARIO 
+        setInterval(
+            function contaOre() {
+                var orarioCompleto = new Date();
+                var ore = orarioCompleto.getHours();
+                var min = (orarioCompleto.getMinutes() < 10 ? '0' : '') + orarioCompleto.getUTCMinutes();
+                var sec = orarioCompleto.getSeconds();
+                document.getElementById('demo').innerHTML = ore + ':' + min + ':' + sec;
+                // tempo.value = ore + ':' + min;
+
+            }, 1000);
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>TODO List</h1>
+
+    Cosa vuoi fare ?<br>
+    <input type="text" id="item"><br>
+    <button onclick="aggiungi()">Aggiungi</button>
+
+    <ul id="lista">
+
+    </ul>
+
+    <div id="demo"></div>
+
+
+    <script>
+        var lista = document.getElementById('lista');
+        var demo = document.getElementById('demo');
+
+        var coseDaFare = [];
+
+        function aggiungi() {
+            //Inserire il controllo suul testo vuoto
+            //Se l'utente digita un testo vuoto o fatto di spazi, lanciare
+            //un avviso
+            demo.innerHTML = '';
+
+            var li = document.createElement('li');
+            var testo = document.getElementById('item').value;
+
+            if (testo.trim() == '') {
+                demo.innerHTML = 'Hai compilato male il campo';
+                demo.setAttribute('class', 'rosso');
+            } else {
+                li.innerHTML = testo;
+                lista.appendChild(li);
+            }
+
+            //prendo di nuovo tutta la lista per mettere
+            //al click la classe barrato
+            var elLi = document.getElementsByTagName('li');
+
+            for (var i = 0; i < elLi.length; i++) {
+                elLi[i].onclick = function () {
+                    this.classList.toggle('barrato')
+                }
+            }
+
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>

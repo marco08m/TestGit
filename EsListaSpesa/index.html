@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Lista della spesa</h1>
+    <ul id="lista_Spesa"></ul>
+
+    <script>
+        var prodotti = ["Insalata", "Acqua", "Vino", "Carne", "Pasta", "Birra", "Pomodoro", "Mozzarella"];
+        var prezzi = [1.50, 0.8, 3.20, 7.8, 0.6, 1.0, 2.0, 0.9];
+
+        var elListaSpesa = document.getElementById('lista_Spesa');
+        // elListaSpesa.innerHTML =
+        //     "<li>" + prodotti[0] + " - " + prezzi[0] + " €</li>" +
+        //     "<li>" + prodotti[1] + " - " + prezzi[1] + " €</li>" +
+        //     "<li>" + prodotti[2] + " - " + prezzi[2] + " €</li>" +
+        //     "<li>" + prodotti[3] + " - " + prezzi[3] + " €</li>" +
+        //     "<li>" + prodotti[4] + " - " + prezzi[4] + " €</li>";
+
+        var listaCompleta = '';
+        //FOR - IN
+        for (var indice in prodotti) {
+            // console.log(prodotti[z]);
+            //Carico la lista completa
+            listaCompleta += "<li>" + prodotti[indice] 
+                + " - " + prezzi[indice] + "</li>";
+        }
+
+    
+        elListaSpesa.innerHTML = listaCompleta
+
+
+
+    </script>
+</body>
+
+</html>

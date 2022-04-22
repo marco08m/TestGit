@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carosello</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <h1>Clicca sul pulsante per scorrere le immagini</h1>
+
+    <div id="foto"></div>
+
+    <!-- si può utilizzare ovunque -->
+    <button onclick="ruotaFoto()">Ruota</button>
+
+    <!-- più consono utilizzarlo nel form
+    <input type="button" value="Ruota" onclick="ruotaFoto()">
+
+    <input type="submit" value="Ruota" onclick="ruotaFoto()"> -->
+
+    <script>
+        var foto = [
+            'img/1.jpg',
+            'img/2.jpg',
+            'img/3.jpg',
+            'img/4.jpg',
+            'img/5.jpg',
+        ];
+
+
+        //stampo la prima immagine
+        var divFoto = document.getElementById('foto');
+
+        var contatore = 0;
+
+        divFoto.innerHTML = '<img id="fotoSingola" src=" ' + foto[contatore] + ' "/> ';
+
+        function ruotaFoto() {
+            //prendo il tag img 
+            var tagIMG = document.getElementById('fotoSingola');
+            ++contatore; //operatore di pre incremento
+
+            if (contatore == foto.length -1 ) {
+                contatore = 0;
+            }
+
+            tagIMG.src = foto[contatore];
+        }
+
+        /*
+        setInterval(() => {
+            ruotaFoto();
+        }, 9000);
+
+*/
+        // Esercizio che faremo in classe
+        /*
+        al posto delle foto far scorrere
+        i nomi dei compagni di classe
+        */
+
+
+    </script>
+</body>
+
+</html>

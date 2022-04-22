@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locandine film</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- sezione carosello locandine -->
+        <section id="sezLocandine" class="sez_locandine flex">
+        </section>
+        <section class="sez_button flex center">
+            <button onclick="show()">Mostra Locandine</button>
+            <button onclick="nascondi()">Nascondi Locandine</button>
+        </section>
+
+        <!-- sezione scelta singola locandina -->
+        <p>Scegli quale film acquistare dal seguente elenco</p>
+
+        <select id="sceltaFilm">
+            <option disabled selected>Scegli Film</option>
+            <option>Die Hard</option>
+            <option>Fast & Furious</option>
+            <option>Midnight in Paris</option>
+            <option>Papillon</option>
+            <option>Scarface</option>
+            <option>Pirati dei Caraibi</option>
+        </select>
+
+        <section id="sezAcquisto"></section>
+    </div><!-- chiude div container -->
+
+    <script>
+        var sezLocandine = document.getElementById('sezLocandine');
+
+        var locandine = [
+            'img/dieHard.jpg',
+            'img/fastFurious.jpg',
+            'img/midnight.jpg',
+            'img/papillon.jpg',
+            'img/scarface.jpg',
+            'img/caraibi.jpg',
+        ];
+
+        var prezzi = [
+            5.99,
+            1.50,
+            11.60,
+            12.99,
+            22.70,
+            6.50
+        ]
+        function show() {
+            sezLocandine.innerHTML = '';
+
+            for (var i = 0; i < locandine.length; i++) {
+                var img = document.createElement('img');
+                img.setAttribute('src', locandine[i]);
+                img.setAttribute('class', 'dimensione');
+                sezLocandine.appendChild(img);
+            }
+        }
+
+        function nascondi() {
+            sezLocandine.innerHTML = ''
+            var img = document.createElement('img');
+            img.setAttribute('src', 'img/cinema.jpg');
+            img.setAttribute('class', 'dimCinema');
+            sezLocandine.appendChild(img);
+        }
+
+
+        //scelta Film
+        var opts = document.getElementById('sceltaFilm'); //select
+
+        var sezAcquisto = document.getElementById('sezAcquisto'); //div
+
+        opts.onchange = function () {
+            console.log(this.options.selectedIndex - 1);
+
+            var indice = this.options.selectedIndex - 1;
+
+            var locandina = '<img class="dimensione" src =' + locandine[indice] + '>';
+            var prezzo = '<p> Prezzo Acquisto: € ' + prezzi[indice] + '</p>';
+
+            sezAcquisto.innerHTML = locandina + prezzo;
+        }
+
+    </script>
+</body>
+
+</html>

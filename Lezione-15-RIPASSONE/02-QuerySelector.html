@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1 class="pippo">Lista spesa</h1>
+
+    <ul id="lista">
+        <li class="pippo">Pasta</li>
+        <li class="pippo">Pane</li>
+        <li class="pippo">Olio</li>
+        <li class="pippo">Vino</li>
+        <li class="pippo">Nutella</li>
+    </ul>
+
+
+    <script>
+        //Voglio prendere tutti gli li 
+        //1.metodo
+        // var lis = document.getElementsByTagName('li'); //Nodelist -> Array
+        // console.log(lis);
+
+        //2° metodo
+        //Query Selector funzionano tramite sintassi CSS
+
+        // var lis = document.querySelectorAll('li');
+        // console.log(lis);
+
+        var lis = document.querySelectorAll('li.pippo');//Array
+        console.log(lis);
+
+        for (var i = 0; i < lis.length; i++) {
+            console.log(lis[i].textContent);
+            lis[i].setAttribute('class', 'rosso')
+        }
+
+        // var lista = document.querySelector('#lista'); //UL 
+        // lista.setAttribute('class', 'rosso')
+
+
+        // var lista = document.querySelector('#lista');
+        // console.log(lista);
+
+        // var lista2 = document.getElementById('lista');
+        // console.log(lista2);
+    </script>
+
+</body>
+
+</html>

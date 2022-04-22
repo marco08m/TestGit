@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head> <!--APRO HEAD-->
+
+    </head><!--CHIUDO HEAD-->
+    
+    <body><!--APRO BODY-->
+
+        <script>
+            //Qui scrivo in linguaggio JS
+            //Recupero il nome utente attraverso il prompt
+            //In base a quello che scriviamo cambierà il nome utente
+            var utente = prompt("Come ti chiami ? ");
+
+            var benvenuto = "Ciao " + utente + " benvenuto sulla pagina";
+
+            document.write("<h1>" + benvenuto + "</h1>");
+
+            // Tutte le volte che voglio utilizzare dei tag html,
+            // li inserisco come stringhe, quindi tra virgiolette ""
+            // Seleziono più righe, CTRL + ù metto il commento automatico
+
+            var annoDiNascita = 1989;
+            var annoCorrente = 2022;
+            var eta = annoCorrente - annoDiNascita;
+
+            document.write("Caro " + utente + ", quest'anno avrai " + eta + " anni");
+
+
+
+
+        </script>
+    </body><!---CHIUDO BODY-->
+</html>

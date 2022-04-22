@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <h1>Todo - List</h1>
+    <p>Lista delle cose da fare</p>
+
+    <ul>
+        <li>Andare al Cinema</li>
+        <li>Giocare con gli amici</li>
+        <li>Suonare</li>
+        <li>Studiare Matematica</li>
+        <li>Chiamare Maria Grazia</li>
+
+    </ul>
+
+    <button onclick="contaColora()">Conta</button>
+
+    <div id="demo"></div>
+
+    <p>Il pulsante Conta deve: <br>
+        1. colorare di blu tutti gli li mettendo una classe per ogni li <br>
+        2. scrivere nel div demo quante cose ho da fare, <br>
+        es.Oggi devi fare 4 cose
+    </p>
+
+    <script>
+        var demo = document.getElementById('demo');
+
+        function contaColora() {
+            //1.
+            var elLi = document.getElementsByTagName('li'); //Nodelist simile Array
+
+            for (var i = 0; i < elLi.length; i++) {
+                elLi[i].setAttribute('class', 'blu');
+
+                elLi[i].onclick = function (event) {
+                    this.classList.add('barrato')
+                }
+
+            }
+
+            //2.
+            demo.innerHTML = 'Oggi devi fare ' + elLi.length + ' cose'
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

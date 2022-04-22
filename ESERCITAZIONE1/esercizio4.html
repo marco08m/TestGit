@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="benvenuto"></h1>
+
+    <script>
+        //salvo la risposta del prompt nella var nomeUtente
+        var nomeUtente = prompt('Come ti chiami ? ');
+
+        //prendo il pezzo di html
+        var benvenuto = document.getElementById('benvenuto');
+
+        //inietto il saluto dentro il pezzo di html 
+        benvenuto.innerHTML = 'Ciao ' + nomeUtente;
+
+    </script>
+
+</body>
+
+</html>

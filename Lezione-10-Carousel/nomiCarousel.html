@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Clicca sul pulsante per scorrere i nomi</h2>
+
+    <div id="info"></div>
+
+    <button onclick="ruotaNomi()">Ruota</button>
+
+    <script>
+        var nomi = [
+            'Tommaso',
+            'Davide',
+            'Ciro',
+            'Claudia',
+            'Alessandro',
+            'Marco',
+            'Diego',
+            'Dani',
+            'Anida',
+            'Andrea',
+            'Luca'
+        ];
+
+        var info = document.getElementById('info');
+
+        info.innerHTML = '<p>' + nomi[indice] + '</p>';
+
+        var indice = 0;
+
+        function ruotaNomi() {
+            indice++;
+            if (indice == nomi.length) {
+                indice = 0;
+            }
+            info.innerHTML = nomi[indice];
+        }
+
+
+
+    </script>
+</body>
+
+</html>

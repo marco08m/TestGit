@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Classe Fal Programmatore 2022</h1>
+    <ul id="listaStud">
+
+    </ul>
+
+    <script>
+        //Array: contenitori di elementi simili tra loro
+        //Tutti gli array sono 0-based
+
+        var colori = ["bianco", "blu", "rosso", "verde"];
+
+        console.log(colori[0]); //bianco
+
+        var secondoColore = colori[1];
+        console.log(secondoColore); //blu
+
+        var terzoColore = colori[2];
+        console.log(terzoColore);
+
+        //Array Studenti 
+        var studenti = ["Davide", "Tommaso", "Andrea", "Claudia",
+            "Marco", "Daniel", "Alessandro", "Anida", "Luca"];
+
+        //recupero la lista ul in cui stamperò i nomi degli studenti
+        var elListaStud = document.getElementById('listaStud');
+
+        //Stampo nella lista il nome degli studenti 
+        elListaStud.innerHTML =
+            "<li>" + studenti[0] + "</li>" +
+            "<li>" + studenti[1] + "</li>" +
+            "<li>" + studenti[2] + "</li>" +
+            "<li>" + studenti[3] + "</li>" +
+            "<li>" + studenti[4] + "</li>" +
+            "<li>" + studenti[5] + "</li>" +
+            "<li>" + studenti[6] + "</li>" +
+            "<li>" + studenti[7] + "</li>" +
+            "<li>" + studenti[8] + "</li>";
+
+
+    </script>
+</body>
+
+</html>

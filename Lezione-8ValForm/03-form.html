@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form>
+        Nome: <input type="text" id="nome" onfocus="cancellaBG()"><br>
+        Cognome: <input type="text" id="cognome"><br>
+        <input type="button" onclick="registra()" value="Registrati">
+    </form>
+
+    <div id="modulo"></div>
+
+
+
+
+    <script>
+        var modulo = document.getElementById('modulo');
+
+        function registra() {
+            var nome = document.getElementById('nome').value.trim(); //quello che sfcrive l'utente
+            var campo = document.getElementById('nome'); //input
+
+            if (nome == '') {
+                modulo.innerHTML = 'Scrivi il tuo nome';
+                modulo.style.color = 'red';
+                campo.style.backgroundColor = 'red';
+            } else {
+                modulo.innerHTML = 'Ciao ' + nome + ', benvenuto';
+            }
+        }
+
+        function cancellaBG() {
+            var input = document.getElementById('nome');
+            input.style.backgroundColor = 'white'
+        }
+
+        // function registra() {
+
+        //     var campoInput = document.getElementById('nome');
+
+        //     if (campoInput.value == '') {
+        //         modulo.innerHTML = "Scrivi il tuo nome";
+        //         campoInput.style.backgroundColor = 'red';
+        //     } else {
+        //         modulo.innerHTML = 'Benvenuto ' + campo.value;
+        //     }
+        // }
+
+
+
+    </script>
+
+</body>
+
+</html>

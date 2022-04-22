@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+
+    <script>
+        var strumenti = ["computer", "tablet", "mouse", "webcam", "smartphone", "tavoletta grafica"];
+
+        //leggo il mio array utilizzando un ciclo for e riempio la variabile lista
+
+        var lista = ''; //uso questo per fargli capire che la lista è una stringa;
+
+        for (var indice in strumenti) {
+            lista += strumenti[indice] + ", ";
+        }
+
+        //prendo il div demo e gli carico la lista dentro 
+        var demo = document.getElementById('demo');
+        demo.style.color = 'blue';
+        demo.innerHTML = lista;
+
+
+        //SENZA L'UTILIZZO DELLA VAR LISTA
+
+        // var demo = document.getElementById('demo');
+
+        // for (var indice in strumenti) {
+        //     demo.innerHTML += strumenti[indice] + ', ';
+        // }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Crea due campi input: 
+    uno per il nome; l'altro per l'età. Con un pulsante recupera il 
+valore dei due campi e stampalo in un div sotto. Con un altro pulsante
+colora il testo nel div. -->
+
+    Nome: <input type="text" id="nome"> <br>
+    <div id="feedNome"></div>
+
+    Età : <input type="number" id="eta"> <br>
+    <div id="feedEta"></div>
+
+    <button id="btnReg">Registra</button>
+    <button id="btnCol">Colora</button>
+
+    <div id="demo"></div>
+
+    <script>
+
+        var btnReg = document.getElementById('btnReg');
+        var btnCol = document.getElementById('btnCol');
+        var demo = document.getElementById('demo');
+        var feedNome = document.getElementById('feedNome');
+        var feedEta = document.getElementById('feedEta');
+
+
+        function registra() {
+            feedNome.innerHTML = '';
+            feedEta.innerHTML = '';
+            //Questa funzione recupera i dati dai campi input 
+            var nome = document.getElementById('nome').value;
+            var eta = document.getElementById('eta').value;
+
+            if (nome == '' || nome.trim() == '') {
+                feedNome.innerHTML = 'Non hai scritto il nome';
+                feedNome.setAttribute('class', 'arancione');
+            }
+            if (eta == '') {
+                feedEta.innerHTML = 'Non hai scritto la tua età';
+                feedEta.setAttribute('class', 'arancione');
+            }
+
+            if (nome != '' && eta != '') {
+                document.getElementById('nome').value = '';
+                document.getElementById('eta').value = '';
+                demo.innerHTML = 'Ciao ' + nome + ', hai ' + eta + ' anni';
+            }
+        }
+
+        btnReg.onclick = registra;
+        // btnReg.addEventListener('click', registra);
+
+        function colora() {
+            demo.setAttribute('class', 'arancione');
+            // demo.classList.add('barrato');
+        }
+
+        btnCol.onclick = colora;
+
+
+
+
+        // var numeri = []
+
+        // for (var i = 0; i < 5; i++) {
+
+        //     var numero = Math.ceil(Math.random() * 90);
+        //     if (numeri.indexOf(numero) != -1) {
+        //         i--
+        //     } else {
+        //         numeri.push(numero);
+        //     }
+        // }
+
+
+        // console.log(numeri);
+
+        // var demo = document.getElementById('demo');
+        // for (var i = 0; i < numeri.length; i++) {
+        //     demo.innerHTML += numeri[i] + '<br>'
+        // }
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

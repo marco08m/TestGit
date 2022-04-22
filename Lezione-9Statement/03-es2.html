@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        var primo = 100;
+        var secondo = 101;
+
+        var distanza1 = Math.abs(100 - primo);
+        var distanza2 = Math.abs(100 - secondo);
+
+        if (distanza1 < distanza2) {
+            console.log("Il più vicino è: " + primo);
+        } else if (distanza2 < distanza1) {
+            console.log("Il più vicino è: " + secondo);
+        } else {
+            console.log("I due numeri hanno la stessa distanza");
+        }
+
+        // if (primo > secondo && primo <= 100 ) {
+        //     console.log("Il più vicino è: " + primo);
+        // } else if (secondo > primo && secondo <= 100) {
+        //     console.log("Il più vicino è: " + secondo);
+        // } else if (secondo == primo && secondo <= 100) {
+        //     console.log("I due numeri hanno la stessa distanza");
+        // } else {
+        //     console.log("I tuoi numeri superano il 100");
+        // }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>TODO List</h1>
+
+    Cosa vuoi fare ?<br>
+    <input type="text" id="item"><br>
+    <button onclick="aggiungi()">Aggiungi</button>
+
+    <ul id="lista">
+
+    </ul>
+
+    <script>
+        var lista = document.getElementById('lista');
+
+        var coseDaFare = [];
+
+        function aggiungi() {
+            //Questa prima parte cambierà domani e creeremo l'elemento al volo
+            lista.innerHTML = '';
+
+            var item = document.getElementById('item').value;
+            coseDaFare.push(item);
+
+            for (var i = 0; i < coseDaFare.length; i++) {
+                lista.innerHTML += '<li>' + coseDaFare[i] + '</li>';
+            }
+
+            //prendo di nuovo tutta la lista per mettere
+            //al click la classe barrato
+            var elLi = document.getElementsByTagName('li');
+
+            for (var i = 0; i < elLi.length; i++) {
+                elLi[i].onclick = function () {
+                    this.setAttribute('class', 'barrato');
+                }
+            }
+
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>

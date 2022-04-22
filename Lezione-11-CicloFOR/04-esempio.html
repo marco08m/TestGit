@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- NOn ho messo onclick sul pulsante poiché voglio 
+    gestire l'evento click dentro al mio script -->
+    <button id="btn">Mostra Frutta</button>
+
+    <div id="demo"></div>
+
+    <script>
+
+        var frutta = ['mela', 'pera', 'pesca', 'banana'];
+        var demo = document.getElementById('demo');
+
+        // Creo una funzione per stampare gli elementi 
+        //contenuti nell'array
+        //La funzione viene lanciata quando clicco sul pulsante
+
+        //prendo il pulsante
+        var btn = document.getElementById('btn');
+
+        //collego il pulsante alla funzione
+        btn.onclick = mostraFrutta;
+
+        function mostraFrutta() {
+            demo.innerHTML = ''; //utile per il reset dei div
+            for (var i = 0; i < frutta.length; i++) {
+                demo.innerHTML += '<li>' + frutta[i] + '</li>';
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="demo"></div>
+
+    <h1>Film</h1>
+    <div id="titolo"></div>
+    <img id="locandina" src="" class="dimLoc">
+    <div id="cast">
+        Cast:
+    </div>
+    <div id="durata"></div>
+    <div id="regista"></div>
+    <div id="genere"></div>
+
+
+    <script>
+        //Oggetti con Notazione Letterale 
+
+        var studente = {
+            nome: 'Pippo',
+            cognome: 'Rossi',
+            eta: 30,
+            materie: ['Javascript', 'Html', 'Php', 'DB']
+        }
+
+        //REcupero le proprietà dello studente
+        console.log("Mi chiamo: " + studente.nome + ' ' + studente.cognome);
+        console.log(studente);
+
+        var demo = document.getElementById('demo');
+        demo.innerHTML += 'Mi chiamo: ' + studente.nome +
+            ' ' + studente.cognome;
+
+        demo.innerHTML += '<br> Le materie che sto studiando sono: ';
+
+        for (var i = 0; i < studente.materie.length; i++) {
+            demo.innerHTML += '<li>' + studente.materie[i] + '</li>'
+        }
+
+        var film = {
+            titolo: 'Fantastici 4',
+            regista: 'Mimmo',
+            annoUscita: 2005,
+            locandina: 'img/fantastici.jpg', //percorso
+            cast: ['Gennaro', 'Rocco', 'Carmela', 'Assunta', 'Domenico'],
+            genere: 'fantascienza',
+            durata: 125
+        }
+
+        //prendo html per il film
+        var titolo = document.getElementById('titolo');
+        var locandina = document.getElementById('locandina');
+        var cast = document.getElementById('cast');
+        var regista = document.getElementById('regista');
+        var durata = document.getElementById('durata');
+        var genere = document.getElementById('genere');
+
+        titolo.innerHTML = '<h1>' + film.titolo + '</h1>';
+        locandina.src = film.locandina;
+        regista.innerHTML = '<p> Regia: ' + film.regista + '</p>';
+        durata.innerHTML = '<p> Durata: ' + film.durata + '</p>';
+        genere.innerHTML = '<p> Genere: ' + film.genere + '</p>';
+
+        for (var i = 0; i < film.cast.length; i++) {
+            cast.innerHTML += '<li>' + film.cast[i] + '</li>';
+        }
+
+
+
+    </script>
+</body>
+
+</html>
